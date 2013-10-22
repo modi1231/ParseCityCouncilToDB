@@ -9,3 +9,6 @@ I also included an example of the current iteration database schema.. it follows
 At the time this is an effective plan for getting the data into chunks.
 
 The code to do this is just a series of for loops, if statements, and a custom class.. nothing that can't be recoded in another language.
+
+
+C# 4.0
