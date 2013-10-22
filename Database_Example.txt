@@ -1,0 +1,148 @@
+﻿USE [test]
+GO
+
+/****** Object:  Table [dbo].[OmahaCityCouncilJournal]    Script Date: 10/21/2013 9:46:22 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[OmahaCityCouncilJournal](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [varchar](100) NULL,
+	[Date] [datetime] NULL,
+	[SessionInfo] [varchar](300) NULL,
+	[Pledge] [bit] NULL,
+	[Invocation] [varchar](100) NULL,
+	[CertificateOfPublication] [varchar](400) NULL,
+	[ConsentAgenda] [varchar](1000) NULL,
+	[Adjourned] [varchar](50) NULL,
+	[WrapUp] [varchar](600) NULL,
+	[FileName] [varchar](50) NULL,
+	[DATE_ENTERED] [datetime] NULL,
+ CONSTRAINT [PK_OmahaCityCouncilJournal] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[OmahaCityCouncilJournal] ADD  CONSTRAINT [DF_OmahaCityCouncilJournal_DATE_ENTERED]  DEFAULT (getdate()) FOR [DATE_ENTERED]
+GO
+
+
+
+
+USE [test]
+GO
+
+/****** Object:  Table [dbo].[OmahaCityCouncilJournal]    Script Date: 10/21/2013 9:46:01 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[OmahaCityCouncilJournal](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [varchar](100) NULL,
+	[Date] [datetime] NULL,
+	[SessionInfo] [varchar](300) NULL,
+	[Pledge] [bit] NULL,
+	[Invocation] [varchar](100) NULL,
+	[CertificateOfPublication] [varchar](400) NULL,
+	[ConsentAgenda] [varchar](1000) NULL,
+	[Adjourned] [varchar](50) NULL,
+	[WrapUp] [varchar](600) NULL,
+	[FileName] [varchar](50) NULL,
+	[DATE_ENTERED] [datetime] NULL,
+ CONSTRAINT [PK_OmahaCityCouncilJournal] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[OmahaCityCouncilJournal] ADD  CONSTRAINT [DF_OmahaCityCouncilJournal_DATE_ENTERED]  DEFAULT (getdate()) FOR [DATE_ENTERED]
+GO
+
+
+
+
+
+USE [test]
+GO
+
+/****** Object:  Table [dbo].[OmahaCityCouncilJournal_Pursuant]    Script Date: 10/21/2013 9:46:49 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[OmahaCityCouncilJournal_Pursuant](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[JournalID] [int] NOT NULL,
+	[PursuantInfo] [varchar](200) NULL,
+ CONSTRAINT [PK_OmahaCityCouncilJournal_Pursuant] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC,
+	[JournalID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+USE [test]
+GO
+
+/****** Object:  Table [dbo].[OmahaCityCouncilJournal_Sections]    Script Date: 10/21/2013 9:47:03 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[OmahaCityCouncilJournal_Sections](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Journal_ID] [int] NOT NULL,
+	[SectionName] [varchar](100) NULL,
+	[SectionInfo] [varchar](max) NULL,
+ CONSTRAINT [PK_OmahaCityCouncilJournal_Sections] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC,
+	[Journal_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
