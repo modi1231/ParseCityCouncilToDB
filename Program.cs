@@ -244,7 +244,7 @@ namespace ParseCityCouncilToDB
 
             try
             {
-                con = new SqlConnection("Server=JEREMY-PC;Database=test;Trusted_Connection=True;");
+                con = new SqlConnection("Server=localhost;Database=test;Trusted_Connection=True;");
                 con.Open();
 
 
